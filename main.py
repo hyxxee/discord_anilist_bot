@@ -49,8 +49,8 @@ async def anime(ctx, *, title: str):
     elif status == 'Currently airing':
         status = 'Releasing'
     
-    # Membersihkan deskripsi
-    description = clean_html(data['description'])
+    # Menangani kemungkinan deskripsi None
+    description = clean_html(data['description']) if data['description'] else "No description available."
     
     # Menentukan jumlah episode yang sudah ditayangkan
     total_episodes = data['episodes'] or '-'
@@ -93,8 +93,8 @@ async def manga(ctx, *, title: str):
     elif status == 'Publishing':
         status = 'Releasing'
     
-    # Membersihkan deskripsi
-    description = clean_html(data['description'])
+    # Menangani kemungkinan deskripsi None
+    description = clean_html(data['description']) if data['description'] else "No description available."
     
     embed = discord.Embed(title=data['title']['romaji'], color=discord.Color(rgb_to_int(data['dominantColor'])))
     embed.set_thumbnail(url=data.get('coverImage', {}).get('large', ''))
