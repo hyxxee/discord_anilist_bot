@@ -1,4 +1,4 @@
-# Discord Anime & Manga Bot
+# Final Discord Anime & Manga Bot
 
 This is a Discord bot that fetches and displays information about anime and manga using the Anilist API. The bot provides commands to retrieve detailed information about anime and manga, including release dates, status, episodes/chapters, and more.
 
